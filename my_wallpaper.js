@@ -1,39 +1,47 @@
 //your parameter variables go here!
-  let pX = 50; // changes the x location of the panda
-  let pY = 35; // changes the y location of the panda
+let pX = 50; // changes the x location of the panda
+let pY = 35; // changes the y location of the panda
 
-  let bX = 280; // changes the x location of the bamboo
-  let bY = 0; // changes the y location of the bamboo
+let bX = 280; // changes the x location of the bamboo
+let bY = 21; // changes the y location of the bamboo
 
-  let lX = bX + 2 // moves the leaf's x location with the bamboo shoot 
-  let lY = bY + 27 // moves the leaf's y location with the bamboo shoot 
+let lX = bX + 2 // moves the leaf's x location with the bamboo shoot 
+let lY = bY + 27 // moves the leaf's y location with the bamboo shoot 
 
-  let sX = 200;
-  let sY = 200;
-  let Size = 10;
+let sX = 200;
+let sY = 200;
+let Size = 10;
 
-  let hX = 50;
-  let hY = 280;
+let hX = 50;
+let hY = 280;
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(false); // set this to false when you're ready to print
+pWallpaper.output_mode(GRID_WALLPAPER);
+pWallpaper.resolution(A3);
+pWallpaper.show_guide(false); // set this to false when you're ready to print
 
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 400;
-  pWallpaper.grid_settings.cell_height = 400;
-  pWallpaper.grid_settings.row_offset  = 50;
+//Grid settings
+pWallpaper.grid_settings.cell_width  = 400;
+pWallpaper.grid_settings.cell_height = 400;
+pWallpaper.grid_settings.row_offset  = 50;
 }
 
 function wallpaper_background() {
  //background(240, 255, 240); // light honeydew green 
  //background(245, 176, 231); // light pink 
- background(98,126,155); // light blue
+ background(98,126,155); // blue
   
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+
+  if(Size > 40){
+    
+  }
+  else{
+      DrawFullBamboo(bX, bY);
+      DrawFullBamboo(bX + 10, bY + 10);
+    }
 
   if(bY < 20){
     DrawBambooShoot(bX, bY);
@@ -116,9 +124,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     DrawPanda(pX + 230, pY + 190);
   }
 
-
 DrawPanda(pX, pY);
-
 
 DrawFullBamboo(bX, bY);
 DrawFullBamboo(bX + 10, bY + 10);
